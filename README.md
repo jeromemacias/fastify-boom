@@ -2,8 +2,6 @@
 
 Fastify Boom support - HTTP-friendly error objects
 
-![image](demo.png)
-
 ## Install
 ```
 npm i fastify-boom

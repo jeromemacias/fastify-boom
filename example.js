@@ -1,6 +1,6 @@
 'use strict'
 
-const fastify = require('fastify')({ logger: true })
+const fastify = require('fastify')()
 const plugin = require('.')
 const Boom = require('boom')
 

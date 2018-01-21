@@ -9,7 +9,7 @@ npm i fastify-boom
 ## Usage
 ```js
 const fastify = require('fastify')()
-const Boom = require('boom)
+const Boom = require('boom')
 
 fastify.register(require('fastify-boom'))
 

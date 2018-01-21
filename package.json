@@ -1,0 +1,33 @@
+{
+  "name": "fastify-boom",
+  "version": "0.0.1",
+  "description": "Fastify Boom support - HTTP-friendly error objects",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./**/*.js",
+    "patch": "np patch --yolo",
+    "minor": "np minor --yolo",
+    "major": "np major --yolo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeromemacias/fastify-boom.git"
+  },
+  "author": "Jérôme Macias <jerome.macias@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeromemacias/fastify-boom/issues"
+  },
+  "homepage": "https://github.com/jeromemacias/fastify-boom#readme",
+  "dependencies": {
+    "fastify-plugin": "^0.2.1",
+    "boom": "^7.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-hemera": "0.0.2",
+    "fastify": "^0.39.1",
+    "np": "^2.18.3",
+    "prettier": "^1.10.2"
+  }
+}

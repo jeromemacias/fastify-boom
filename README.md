@@ -3,6 +3,7 @@
 Fastify Boom support - HTTP-friendly error objects
 
 [![Current Version](https://img.shields.io/npm/v/fastify-boom.svg)](https://www.npmjs.com/package/fastify-boom)
+[![Build Status](https://travis-ci.org/jeromemacias/fastify-boom.svg?branch=master)](https://travis-ci.org/jeromemacias/fastify-boom)
 
 ## Install
 ```

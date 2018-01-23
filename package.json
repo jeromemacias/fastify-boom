@@ -1,6 +1,6 @@
 {
   "name": "fastify-boom",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fastify Boom support - HTTP-friendly error objects",
   "main": "index.js",
   "scripts": {

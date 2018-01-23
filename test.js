@@ -10,6 +10,7 @@ test('set the default error', t => {
   t.plan(4)
 
   const fastify = Fastify()
+  fastify.register(boomPlugin)
 
   fastify.get('/', (request, reply) => {
     reply.code(401).send(new Error('invalid password'))

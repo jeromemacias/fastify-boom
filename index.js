@@ -10,7 +10,11 @@ function fastifyErrorPage(fastify, options, next) {
         .type('application/json')
         .headers(error.output.headers)
         .send(error.output.payload)
+
+      return
     }
+
+    reply.send(error || new Error('Got non-error: ' + error))
   })
 
   next()

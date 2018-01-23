@@ -6,17 +6,17 @@ const Fastify = require('fastify')
 const boomPlugin = require('.')
 const Boom = require('boom')
 
-test('set the default error', t => {
+test('set the default error', function(t) {
   t.plan(4)
 
   const fastify = Fastify()
   fastify.register(boomPlugin)
 
-  fastify.get('/', (request, reply) => {
+  fastify.get('/', function(request, reply) {
     reply.code(401).send(new Error('invalid password'))
   })
 
-  fastify.inject({ method: 'GET', url: '/' }, (err, res) => {
+  fastify.inject({ method: 'GET', url: '/' }, function(err, res) {
     t.error(err)
 
     t.equal(res.statusCode, 401)
@@ -27,16 +27,16 @@ test('set the default error', t => {
   })
 })
 
-test('set the boom error without plugin', t => {
+test('set the boom error without plugin', function(t) {
   t.plan(5)
 
   const fastify = Fastify()
 
-  fastify.get('/', (request, reply) => {
+  fastify.get('/', function(request, reply) {
     reply.send(Boom.unauthorized('invalid password', 'sample'))
   })
 
-  fastify.inject({ method: 'GET', url: '/' }, (err, res) => {
+  fastify.inject({ method: 'GET', url: '/' }, function(err, res) {
     t.error(err)
     t.doesNotHave(res.headers, {
       'www-authenticate': 'sample error="invalid password"'
@@ -49,17 +49,17 @@ test('set the boom error without plugin', t => {
   })
 })
 
-test('set the boom error', t => {
+test('set the boom error', function(t) {
   t.plan(5)
 
   const fastify = Fastify()
   fastify.register(boomPlugin)
 
-  fastify.get('/boom', (request, reply) => {
+  fastify.get('/boom', function(request, reply) {
     reply.send(Boom.unauthorized('invalid password', 'sample'))
   })
 
-  fastify.inject({ method: 'GET', url: '/boom' }, (err, res) => {
+  fastify.inject({ method: 'GET', url: '/boom' }, function(err, res) {
     t.error(err)
 
     t.include(res.headers, {

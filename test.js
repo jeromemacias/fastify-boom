@@ -7,6 +7,26 @@ const boomPlugin = require('.')
 const Boom = require('boom')
 
 test('set the default error', t => {
+  t.plan(4)
+
+  const fastify = Fastify()
+
+  fastify.get('/', (request, reply) => {
+    reply.code(401).send(new Error('invalid password'))
+  })
+
+  fastify.inject({ method: 'GET', url: '/' }, (err, res) => {
+    t.error(err)
+
+    t.equal(res.statusCode, 401)
+    t.equal(res.statusMessage, 'Unauthorized')
+    t.include(JSON.parse(res.payload), { message: 'invalid password' })
+
+    fastify.close()
+  })
+})
+
+test('set the boom error without plugin', t => {
   t.plan(5)
 
   const fastify = Fastify()

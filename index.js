@@ -3,7 +3,7 @@
 const fp = require('fastify-plugin')
 
 function fastifyErrorPage(fastify, options, next) {
-  fastify.setErrorHandler(function errorHandler(error, reply) {
+  fastify.setErrorHandler(function errorHandler(error, request, reply) {
     if (error && error.isBoom) {
       reply
         .code(error.output.statusCode)
@@ -21,6 +21,6 @@ function fastifyErrorPage(fastify, options, next) {
 }
 
 module.exports = fp(fastifyErrorPage, {
-  fastify: '>=0.39.1',
+  fastify: '>=0.43',
   name: 'fastify-boom'
 })

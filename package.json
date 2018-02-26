@@ -21,13 +21,13 @@
   },
   "homepage": "https://github.com/jeromemacias/fastify-boom#readme",
   "dependencies": {
-    "fastify-plugin": "^0.2.1",
+    "fastify-plugin": "^0.2.2",
     "boom": "^7.1.1"
   },
   "devDependencies": {
     "eslint": "^4.14.0",
     "eslint-config-hemera": "0.0.2",
-    "fastify": "^0.39.1",
+    "fastify": "^0.43.0",
     "np": "^2.18.3",
     "pre-commit": "~1.2.2",
     "prettier": "^1.10.2",

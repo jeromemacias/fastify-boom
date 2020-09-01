@@ -14,7 +14,7 @@ function fastifyErrorPage(fastify, options, next) {
       return
     }
 
-    reply.send(error || new Error('Got non-error: ' + error))
+    reply.send(error || new Error(`Got non-error: ${error}`))
   })
 
   next()

@@ -1,12 +1,11 @@
 'use strict'
 
-const tap = require('tap')
-const test = tap.test
+const { test } = require('tap')
 const Fastify = require('fastify')
-const boomPlugin = require('.')
 const Boom = require('@hapi/boom')
+const boomPlugin = require('.')
 
-test('set the default error', t => {
+test('set the default error', (t) => {
   t.plan(4)
 
   const fastify = Fastify()
@@ -27,7 +26,7 @@ test('set the default error', t => {
   })
 })
 
-test('set the boom error without plugin', t => {
+test('set the boom error without plugin', (t) => {
   t.plan(5)
 
   const fastify = Fastify()
@@ -49,7 +48,7 @@ test('set the boom error without plugin', t => {
   })
 })
 
-test('set the boom error', t => {
+test('set the boom error', (t) => {
   t.plan(5)
 
   const fastify = Fastify()

@@ -4,7 +4,7 @@ const tap = require('tap')
 const test = tap.test
 const Fastify = require('fastify')
 const boomPlugin = require('.')
-const Boom = require('boom')
+const Boom = require('@hapi/boom')
 
 test('set the default error', t => {
   t.plan(4)

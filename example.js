@@ -2,7 +2,7 @@
 
 const fastify = require('fastify')()
 const plugin = require('.')
-const Boom = require('boom')
+const Boom = require('@hapi/boom')
 
 fastify.register(plugin)
 
